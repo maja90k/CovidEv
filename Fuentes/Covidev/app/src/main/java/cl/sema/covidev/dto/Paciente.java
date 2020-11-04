@@ -1,6 +1,8 @@
 package cl.sema.covidev.dto;
 
-public class Paciente {
+import cl.sema.covidev.PrincipalActivity;
+
+public class Paciente extends PrincipalActivity {
     private int rut;
     private String nombre;
     private String apellido;
