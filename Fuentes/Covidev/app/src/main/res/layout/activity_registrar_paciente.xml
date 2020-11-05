@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="false"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistrarPacienteActivity"
@@ -11,14 +12,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="186dp"
         android:background="@drawable/covid"
+
         >
 
         <ImageView
             android:id="@+id/user"
-            android:layout_width="98dp"
-            android:layout_height="71dp"
+            android:layout_width="184dp"
+            android:layout_height="135dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:src="@drawable/user">
@@ -26,15 +28,278 @@
         </ImageView>
 
         <TextView
-            android:layout_width="207dp"
-            android:layout_height="61dp"
+            android:layout_width="516dp"
+            android:layout_height="85dp"
             android:layout_gravity="center"
             android:layout_weight="2"
-            android:text="Registrar Paciente"
             android:gravity="center"
+            android:text="Registrar Paciente"
             android:textColor="@color/textwhite"
             android:textSize="@dimen/Textsize">
 
         </TextView>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="902dp"
+        android:layout_marginTop="@dimen/marginTopBase"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/verificador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:hint="Ingrese Rut"
+                android:inputType="number"
+                android:textSize="29sp"
+                ></EditText>
+
+            <TextView
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:text="-"
+                android:textAllCaps="true"
+                android:textSize="20sp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/validador"
+                android:layout_gravity="center_vertical"
+                android:layout_width="191dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:textSize="29sp"
+                ></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/nombretxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:hint="Ingrese Nombre"
+                android:textSize="29sp"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/apellidotxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:hint="Ingrese Apellido"
+                android:textSize="29sp"
+                android:inputType="text"
+                android:layout_gravity="center_vertical"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/calendario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                android:clickable="true"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="MM/DD/AAAA"
+                android:inputType="date"
+                android:layout_gravity="center_vertical"
+                android:textSize="29sp"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Area de Trabajo"
+                android:textSize="31sp"
+                android:layout_gravity="center_vertical">
+
+            </TextView>
+
+            <Spinner
+                android:id="@+id/area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical">
+
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:text="¿Presenta simtomas de Covid?"
+                android:textSize="31sp"
+                android:layout_gravity="center_vertical">
+
+            </TextView>
+
+            <Switch
+                android:id="@+id/sintomas"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+            </Switch>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/temperatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:hint="Indique Temperatura ºC"
+                android:textSize="29sp"
+                android:inputType="number"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:text="¿Presenta Tos?"
+                android:textSize="31sp"
+                android:layout_gravity="center_vertical">
+
+            </TextView>
+
+            <Switch
+                android:id="@+id/tos"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+
+                android:layout_gravity="center_vertical">
+
+            </Switch>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopBase"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/presion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTopBase"
+                android:layout_marginRight="@dimen/marginRight"
+                android:layout_weight="1"
+                android:textSize="29sp"
+                android:hint="Indique Presion Arterial"
+                android:inputType="number"></EditText>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTopBtn">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/registrarBtn"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"
+            android:text="Registrar"
+            android:textColor="@color/textwhite"
+            android:textSize="@dimen/Texthint">
+
+        </Button>
+    </LinearLayout>
+
+
 </LinearLayout>
