@@ -237,26 +237,17 @@
             android:layout_marginTop="@dimen/marginTopBase"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="226dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:text="¿Presenta Tos?"
-                android:textSize="31sp"
-                android:layout_gravity="center_vertical">
-
-            </TextView>
-
             <Switch
                 android:id="@+id/tos"
-                android:layout_width="76dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/marginRight"
+                android:layout_gravity="center_vertical"
+                android:hint="¿Presenta tos?"
                 android:layout_weight="1"
-
-                android:layout_gravity="center_vertical">
+                android:textSize="31sp"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                >
 
             </Switch>
         </LinearLayout>
@@ -287,13 +278,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopBtn">
+        android:layout_marginTop="@dimen/marginTopBtn"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/registrarBtn"
-            android:layout_gravity="center"
+            android:layout_width="314dp"
+            android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
+            android:gravity="center"
             android:text="Registrar"
             android:textColor="@color/textwhite"
             android:textSize="@dimen/Texthint">
