@@ -188,25 +188,17 @@
             android:layout_marginTop="@dimen/marginTopBase"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="226dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:text="¿Presenta simtomas de Covid?"
-                android:textSize="31sp"
-                android:layout_gravity="center_vertical">
-
-            </TextView>
-
             <Switch
                 android:id="@+id/sintomas"
-                android:layout_width="76dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/marginRight"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1">
+                android:text="¿Presenta sintomas del Covid?"
+                android:layout_weight="1"
+                android:textSize="31sp"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginRight="@dimen/marginRight"
+                android:onClick="onClickSw1">
 
             </Switch>
         </LinearLayout>
@@ -242,11 +234,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:hint="¿Presenta tos?"
+                android:text="¿Presenta Tos?"
                 android:layout_weight="1"
                 android:textSize="31sp"
                 android:layout_marginLeft="@dimen/marginLeft"
                 android:layout_marginRight="@dimen/marginRight"
+                android:onClick="onClickSw2"
                 >
 
             </Switch>
@@ -290,7 +283,8 @@
             android:gravity="center"
             android:text="Registrar"
             android:textColor="@color/textwhite"
-            android:textSize="@dimen/Texthint">
+            android:textSize="@dimen/Texthint"
+            >
 
         </Button>
     </LinearLayout>
