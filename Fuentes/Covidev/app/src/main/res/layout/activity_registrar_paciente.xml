@@ -279,11 +279,12 @@
             android:id="@+id/registrarBtn"
             android:layout_width="314dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/button_rounded"
             android:gravity="center"
             android:text="Registrar"
             android:textColor="@color/textwhite"
             android:textSize="@dimen/Texthint"
+
             >
 
         </Button>

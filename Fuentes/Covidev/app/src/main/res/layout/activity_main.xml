@@ -1,34 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:background="#9C9C9C">
 
-    <include layout="@layout/toolbar"></include>
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="199dp"
+        android:layout_height="119dp"
+        app:srcCompat="@drawable/coronavirus"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="566dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="199dp"
+        android:layout_height="119dp"
+        app:srcCompat="@drawable/coronavirus"
+        tools:layout_editor_absoluteX="-35dp"
+        tools:layout_editor_absoluteY="577dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="199dp"
+        android:layout_height="119dp"
+        app:srcCompat="@drawable/coronavirus"
+        tools:layout_editor_absoluteX="290dp"
+        tools:layout_editor_absoluteY="-37dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="223dp"
+        android:layout_height="109dp"
+        app:srcCompat="@drawable/coronavirus"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="199dp"
+        android:layout_height="119dp"
+        app:srcCompat="@drawable/coronavirus"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="649dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="128dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/safety"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="45dp" />
 
     <EditText
-        android:id="@+id/user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textStyle="italic">
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="201dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="nombre, xxxxxxxx "
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="263dp"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="276dp"
+        android:layout_height="56dp"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="350dp"
+        android:backgroundTint="@color/colorPrimary">
 
     </EditText>
 
     <EditText
-        android:id="@+id/user_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textStyle="italic">
-
-    </EditText>
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="65dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="263dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="x"/>
 
     <Button
-        android:id="@+id/iniciarsesionBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="INICIAR SESION">
-    </Button>
+        android:id="@+id/button"
+        android:layout_width="276dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Ingresar"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="440dp" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido, al registro"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="de pacientes covid-19"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="212dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

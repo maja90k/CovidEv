@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.user_nameTxt = findViewById(R.id.user_name);
-        this.user_passTxt = findViewById(R.id.user_pass);
-        this.iniciarsesionButton = findViewById(R.id.iniciarsesionBtn);
+
     }
 }
