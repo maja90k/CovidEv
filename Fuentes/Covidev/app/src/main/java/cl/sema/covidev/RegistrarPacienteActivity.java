@@ -59,6 +59,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_item);
 
         this.sin     = (Switch) findViewById(R.id.sintomas);
+        sin.setChecked(false);
         this.sin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +74,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
         });
         this.temp    = (EditText) findViewById(R.id.temperatura);
         this.tos     = (Switch) findViewById(R.id.tos);
+        tos.setChecked(false);
         this.tos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,9 +104,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                     String ape      = apellido.getText().toString().trim();
                     int fha         = Integer.parseInt(fecha.getText().toString().trim()) ;
                     String art      = artra.getSelectedItem().toString();
-                    boolean sts     = ;
                     int tma         = Integer.parseInt(temp.getText().toString().trim()) ;
-                    boolean ts      = ;
                     int psna        = Integer.parseInt(pres.getText().toString().trim()) ;
 
                     if (vrn <= 1111111 || vrn >= 99999999){
@@ -125,7 +125,6 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                     if (art.isEmpty()){
                         errores.add("Debe indicar su area de trabajo");
                     }
-
                     if (tma <= 20.0 ){
                         errores.add("La temperatura debe ser mayor a 20.0°C");
                     }
