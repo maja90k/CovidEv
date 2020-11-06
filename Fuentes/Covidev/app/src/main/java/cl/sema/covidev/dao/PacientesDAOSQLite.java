@@ -1,0 +1,63 @@
+package cl.sema.covidev.dao;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import cl.sema.covidev.dto.Paciente;
+import cl.sema.covidev.helpers.PacientesDBOpenHelper;
+
+public class PacientesDAOSQLite implements PacientesDAO {
+
+    private PacientesDBOpenHelper db;
+
+    public PacientesDAOSQLite(Context contexto) {
+        this.db = new PacientesDBOpenHelper(contexto, "DBPacientes", null, 1);
+    }
+
+    @Override
+    public Paciente save(Paciente p) {
+        SQLiteDatabase writer = this.db.getWritableDatabase();
+        String sql = String.format("INSERT INTO pacientes(" + "rut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
+                        " VALUES(%d,'%s','%s','%s')"
+                , p.getRut(), p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
+        writer.execSQL(sql);
+        writer.close();
+        return null;
+    }
+
+    @Override
+    public List<Paciente> getAll() {
+        SQLiteDatabase reader = this.db.getReadableDatabase();
+        List<Paciente> pacientes = new ArrayList<>();
+        try {
+            if (reader != null) {
+                Cursor c = reader.rawQuery("SELECT rut,nombre,apellido, fechaexamen" +
+                        ", area,sintomas, temperatura, tos, presion" + " FROM pacientes", null);
+                if (c.moveToFirst()) {
+                    do {
+                        Paciente p = new Paciente();
+                        p.setRut(c.getInt(0));
+                        p.setNombre(c.getString(1));
+                        p.setApellido(c.getString(2));
+                        p.setFechaexamen(c.getInt(3));
+                        p.setArea(c.getString(4));
+                        p.setSintomas(c.equals(true));
+                        p.setTemperatura(c.getInt(5));
+                        p.setTos(c.equals(true));
+                        p.setPresion(c.getInt(6));
+
+                    } while(c.moveToNext());
+                }
+            }
+        } catch (Exception ex) {
+            pacientes = null;
+        }
+        return null;
+    }
+}
