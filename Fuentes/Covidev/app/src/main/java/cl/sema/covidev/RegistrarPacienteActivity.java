@@ -93,16 +93,16 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
                 try {
-                    int vrn         = veri ;
-                    int vdr         = vali ;
+                    int vrn         = Integer.parseInt(veri.getText().toString().trim());
+                    int vdr         = Integer.parseInt(vali.getText().toString().trim()) ;
                     String nomb     = nombre.getText().toString().trim();
                     String ape      = apellido.getText().toString().trim();
-                    date fha        = fecha ;
+                    String fha        = fecha ;
                     String art      = artra.getSelectedItem().toString();
                     boolean sts     = sin ;
-                    int tma         = temp ;
+                    int tma         = Integer.parseInt(temp.getText().toString().trim()) ;
                     boolean ts      = tos ;
-                    int psna        = pres ;
+                    int psna        = Integer.parseInt(pres.getText().toString().trim()) ;
 
 
                     if(errores.isEmpty()){
