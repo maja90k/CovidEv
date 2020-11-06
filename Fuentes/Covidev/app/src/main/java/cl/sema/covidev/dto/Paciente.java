@@ -84,4 +84,14 @@ public class Paciente extends PrincipalActivity {
     public void setPresion(int presion) {
         this.presion = presion;
     }
+
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "rut: " + rut +
+                ", nombre: '" + nombre + '\'' +
+                ", apellido: '" + apellido + '\'' +
+                ", fechaexamen: " + fechaexamen +
+                '}';
+    }
 }

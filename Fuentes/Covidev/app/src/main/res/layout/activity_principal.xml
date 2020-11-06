@@ -24,7 +24,7 @@
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/agregar"
             android:padding="16dp"
-            android:id="@+id/registrarBtn"
+            android:id="@+id/registro_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
