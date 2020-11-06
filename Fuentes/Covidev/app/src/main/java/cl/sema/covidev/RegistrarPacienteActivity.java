@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import cl.sema.covidev.dto.Paciente;
+
 public class RegistrarPacienteActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private EditText veri;
@@ -98,11 +100,11 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                     int vdr         = Integer.parseInt(vali.getText().toString().trim()) ;
                     String nomb     = nombre.getText().toString().trim();
                     String ape      = apellido.getText().toString().trim();
-                    String fha      = fecha ;
+                    int fha         = Integer.parseInt(fecha.getText().toString().trim()) ;
                     String art      = artra.getSelectedItem().toString();
-                    boolean sts     =  ;
+                    boolean sts     = ;
                     int tma         = Integer.parseInt(temp.getText().toString().trim()) ;
-                    boolean ts      = tos ;
+                    boolean ts      = ;
                     int psna        = Integer.parseInt(pres.getText().toString().trim()) ;
 
                     if (vrn <= 1111111 || vrn >= 99999999){
@@ -117,7 +119,9 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                     if (ape.isEmpty()){
                         errores.add("Debe ingresar un apellido valido");
                     }
-
+                    if(fha >= 0 ){
+                        errores.add("Debe indicar la fecha del examen");
+                    }
                     if (art.isEmpty()){
                         errores.add("Debe indicar su area de trabajo");
                     }
@@ -126,12 +130,22 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                         errores.add("La temperatura debe ser mayor a 20.0°C");
                     }
 
-                    if (psna < 60 || psna > 200){
-                        errores.add("Debe indicar su presion arterial valida o por precaucion debe ir al centro medico cercano");
+                    if (psna < 90 || psna > 200){
+                        errores.add("Debe indicar su Presion arterial valida o por precaucion debe ir al centro medico cercano");
                     }
 
                     if(errores.isEmpty()){
+                        Paciente p = new Paciente();
+                        p.setRut(vrn);
+                        p.setValidadorRut(vdr);
+                        p.setNombre(nomb);
+                        p.setApellido(ape);
+                        p.setFechaexamen(fha);
+                        p.setArea(art);
 
+                        p.setTemperatura(tma);
+
+                        p.setPresion(psna);
                         Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception ex){

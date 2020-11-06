@@ -4,6 +4,7 @@ import cl.sema.covidev.PrincipalActivity;
 
 public class Paciente extends PrincipalActivity {
     private int rut;
+    private int validadorRut;
     private String nombre;
     private String apellido;
     private int fechaexamen;
@@ -85,13 +86,29 @@ public class Paciente extends PrincipalActivity {
         this.presion = presion;
     }
 
+
+
+    public void setValidadorRut(int validadorRut) {
+        this.validadorRut = validadorRut;
+    }
+
+    public int getValidadorRut() {
+        return validadorRut;
+    }
+
     @Override
     public String toString() {
         return "Paciente{" +
-                "rut: " + rut +
-                ", nombre: '" + nombre + '\'' +
-                ", apellido: '" + apellido + '\'' +
-                ", fechaexamen: " + fechaexamen +
+                "rut=" + rut +
+                ", validadorRut=" + validadorRut +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", fechaexamen=" + fechaexamen +
+                ", area='" + area + '\'' +
+                ", sintomas=" + sintomas +
+                ", temperatura=" + temperatura +
+                ", tos=" + tos +
+                ", presion=" + presion +
                 '}';
     }
 }
