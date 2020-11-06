@@ -50,14 +50,14 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="128dp"
-        android:layout_height="105dp"
+        android:layout_width="157dp"
+        android:layout_height="116dp"
         app:srcCompat="@drawable/safety"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="45dp" />
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="40dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/usernombre"
         android:layout_width="201dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -65,13 +65,15 @@
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="263dp"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:backgroundTint="@color/colorPrimary"
+        />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/psswd"
         android:layout_width="276dp"
         android:layout_height="56dp"
         android:hint="Password"
+
         android:ems="10"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="65dp"
@@ -81,7 +83,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/verificador"
         android:layout_width="65dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -92,7 +94,7 @@
         android:hint="x"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginbutton"
         android:layout_width="276dp"
         android:layout_height="40dp"
         android:background="@drawable/button_rounded"
@@ -117,4 +119,5 @@
         android:textSize="25sp"
         tools:layout_editor_absoluteX="83dp"
         tools:layout_editor_absoluteY="212dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

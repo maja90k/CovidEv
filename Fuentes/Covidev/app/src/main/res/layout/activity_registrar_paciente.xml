@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="186dp"
+        android:layout_height="206dp"
         android:background="@drawable/covid"
 
         >
@@ -64,6 +64,7 @@
                 android:hint="Ingrese Rut, si termina en k reemplaze por un 0"
                 android:inputType="number"
                 android:textSize="29sp"
+                android:backgroundTint="@color/colorPrimary"
                 ></EditText>
 
             <TextView
@@ -88,6 +89,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:textSize="29sp"
+                android:backgroundTint="@color/colorPrimary"
                 ></EditText>
         </LinearLayout>
 
@@ -108,7 +110,8 @@
                 android:layout_weight="1"
                 android:hint="Ingrese Nombre"
                 android:textSize="29sp"
-                android:inputType="text"></EditText>
+                android:inputType="text"
+                android:backgroundTint="@color/colorPrimary"></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -128,7 +131,9 @@
                 android:hint="Ingrese Apellido"
                 android:textSize="29sp"
                 android:inputType="text"
-                android:layout_gravity="center_vertical"></EditText>
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/colorPrimary"
+                ></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -149,7 +154,8 @@
                 android:hint="MM/DD/AAAA"
                 android:inputType="date"
                 android:layout_gravity="center_vertical"
-                android:textSize="29sp"></EditText>
+                android:textSize="29sp"
+                android:backgroundTint="@color/colorPrimary"></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -173,11 +179,11 @@
             <Spinner
                 android:id="@+id/area"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/marginLeft"
                 android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical">
+                android:layout_weight="1">
 
             </Spinner>
         </LinearLayout>
@@ -198,7 +204,7 @@
                 android:textSize="31sp"
                 android:layout_marginLeft="@dimen/marginLeft"
                 android:layout_marginRight="@dimen/marginRight"
-                android:onClick="onClickSw1">
+                android:backgroundTint="@color/colorPrimary">
 
             </Switch>
         </LinearLayout>
@@ -220,7 +226,8 @@
                 android:layout_weight="1"
                 android:hint="Indique Temperatura ºC"
                 android:textSize="29sp"
-                android:inputType="number"></EditText>
+                android:inputType="number"
+                android:backgroundTint="@color/colorPrimary"></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -262,7 +269,8 @@
                 android:layout_weight="1"
                 android:textSize="29sp"
                 android:hint="Indique Presion Arterial"
-                android:inputType="number"></EditText>
+                android:inputType="number"
+                android:backgroundTint="@color/colorPrimary"></EditText>
         </LinearLayout>
 
 
@@ -277,8 +285,8 @@
 
         <Button
             android:id="@+id/registrarBtn"
-            android:layout_width="314dp"
-            android:layout_height="wrap_content"
+            android:layout_width="323dp"
+            android:layout_height="match_parent"
             android:background="@drawable/button_rounded"
             android:gravity="center"
             android:text="Registrar"
