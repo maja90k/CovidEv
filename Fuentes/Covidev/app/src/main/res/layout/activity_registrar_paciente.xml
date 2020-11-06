@@ -61,7 +61,7 @@
                 android:layout_marginTop="@dimen/marginTopBase"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
-                android:hint="Ingrese Rut"
+                android:hint="Ingrese Rut, si termina en k reemplaze por un 0"
                 android:inputType="number"
                 android:textSize="29sp"
                 ></EditText>

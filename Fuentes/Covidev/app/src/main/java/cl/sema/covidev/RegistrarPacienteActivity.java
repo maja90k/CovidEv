@@ -94,16 +94,41 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 List<String> errores = new ArrayList<>();
                 try {
                     int vrn         = Integer.parseInt(veri.getText().toString().trim());
+                    
                     int vdr         = Integer.parseInt(vali.getText().toString().trim()) ;
                     String nomb     = nombre.getText().toString().trim();
                     String ape      = apellido.getText().toString().trim();
-                    String fha        = fecha ;
+                    String fha      = fecha ;
                     String art      = artra.getSelectedItem().toString();
-                    boolean sts     = sin ;
+                    boolean sts     =  ;
                     int tma         = Integer.parseInt(temp.getText().toString().trim()) ;
                     boolean ts      = tos ;
                     int psna        = Integer.parseInt(pres.getText().toString().trim()) ;
 
+                    if (vrn <= 1111111 || vrn >= 99999999){
+                        errores.add("El rut ingresado no es valido");
+                    }
+                    if (vdr < 0 || vdr > 9 ){
+                        errores.add("El numero verificador ingresado no es valido");
+                    }
+                    if (nomb.isEmpty()){
+                        errores.add("Debe ingresar un nombre valido");
+                    }
+                    if (ape.isEmpty()){
+                        errores.add("Debe ingresar un apellido valido");
+                    }
+
+                    if (art.isEmpty()){
+                        errores.add("Debe indicar su area de trabajo");
+                    }
+
+                    if (tma <= 20.0 ){
+                        errores.add("La temperatura debe ser mayor a 20.0°C");
+                    }
+
+                    if (psna < 60 || psna > 200){
+                        errores.add("Debe indicar su presion arterial valida o por precaucion debe ir al centro medico cercano");
+                    }
 
                     if(errores.isEmpty()){
 
