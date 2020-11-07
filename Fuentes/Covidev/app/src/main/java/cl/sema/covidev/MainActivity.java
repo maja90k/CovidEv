@@ -10,6 +10,8 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.sema.covidev.dto.User;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -35,13 +37,26 @@ public class MainActivity extends AppCompatActivity {
                 List<String> errores = new ArrayList<>();
                 try {
                     String nmb = nombre.getText().toString().trim();
+                    String vrnb = validadornmb.getText().toString().trim();
+                    String pwd = passwd.getText().toString().trim();
 
                     if (nmb.length() < 7 || nmb.length() > 8 ){
                         errores.add("El nombre debe ser de un max de 8 caracteres y un minimo de 7 ");
-                    }if(nmb.isEmpty()){
-                        nombre = ;
+                    }
+                    if(nmb.isEmpty()){
                         errores.add("Debe ingresar un nombre de usuario");
                     }
+                    if (vrnb.isEmpty() || vrnb.length() > 1){
+                        errores.add("Debe ingresar una letra de su nombre");
+                    }
+                    if (pwd.isEmpty() || pwd.length() > 4 ){
+                        errores.add("Debe ingresar su contraseña,los ultimos 4 digitos del nombre ingresado con la letra verificadora");
+                    }
+                    if (errores.isEmpty()){
+                        User u = new User();
+                        
+                    }
+
                 }catch (Exception ex){
 
                 }
