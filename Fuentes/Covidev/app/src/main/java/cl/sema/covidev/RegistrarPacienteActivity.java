@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,7 +21,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import cl.sema.covidev.dao.PacientesDAOSQLite;
 import cl.sema.covidev.dto.Paciente;
+import cl.sema.covidev.helpers.PacientesDBOpenHelper;
 
 public class RegistrarPacienteActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
@@ -97,8 +100,10 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
                 try {
-                    int vrn = Integer.parseInt(veri.getText().toString().trim());
+                    //PacientesDBOpenHelper pct = new PacientesDBOpenHelper(this, "administracion", null, 1) ;
+                    //SQLiteDatabase bd = new pct.getWritableDatabase();
 
+                    int vrn = Integer.parseInt(veri.getText().toString().trim());
                     int vdr = Integer.parseInt(vali.getText().toString().trim());
                     String nomb = nombre.getText().toString().trim();
                     String ape = apellido.getText().toString().trim();
@@ -145,6 +150,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                         p.setTemperatura(tma);
 
                         p.setPresion(psna);
+                        //pct.add(p);
                         Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception ex) {

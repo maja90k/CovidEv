@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (errores.isEmpty()){
                         User u = new User();
+                        u.setNombre(nmb);
+                        u.setValidadorNom(vrnb);
+                        u.setPassword(pwd);
                         
                     }
 
