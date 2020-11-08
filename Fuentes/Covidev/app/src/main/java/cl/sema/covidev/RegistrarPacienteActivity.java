@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import cl.sema.covidev.dao.PacientesDAO;
 import cl.sema.covidev.dao.PacientesDAOSQLite;
 import cl.sema.covidev.dto.Paciente;
 import cl.sema.covidev.helpers.PacientesDBOpenHelper;
@@ -38,6 +40,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
     private Switch tos;
     private EditText pres;
     private Button regbtn;
+    private PacientesDAO paciDAO = new PacientesDAOSQLite(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +153,10 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                         p.setTemperatura(tma);
 
                         p.setPresion(psna);
-                        //pct.add(p);
+                        paciDAO.save(p);
+                        //3. Redirigir al MainActivity
+                        startActivity(new Intent(RegistrarPacienteActivity.this
+                                , MainActivity.class));
                         Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception ex) {

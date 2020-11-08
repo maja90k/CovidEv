@@ -2,14 +2,18 @@ package cl.sema.covidev;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.sema.covidev.dao.UserDAO;
+import cl.sema.covidev.dao.UserDAOSQLite;
 import cl.sema.covidev.dto.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText validadornmb;
     private EditText passwd;
     private Button loginbtn;
+    private UserDAO usDAO = new UserDAOSQLite(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +62,14 @@ public class MainActivity extends AppCompatActivity {
                         u.setNombre(nmb);
                         u.setValidadorNom(vrnb);
                         u.setPassword(pwd);
-                        
+
+                        usDAO.save(u);
+
+                        startActivity(new Intent(
+                                MainActivity.this
+                                , MainActivity.class
+                        ));
+                        Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores , Toast.LENGTH_SHORT).show();
                     }
 
                 }catch (Exception ex){

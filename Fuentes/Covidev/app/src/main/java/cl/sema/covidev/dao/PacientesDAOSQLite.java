@@ -25,7 +25,7 @@ public class PacientesDAOSQLite implements PacientesDAO {
         SQLiteDatabase writer = this.db.getWritableDatabase();
         String sql = String.format("INSERT INTO pacientes(" + "rut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
                         " VALUES(%d,'%s','%s','%s')"
-                , p.getRut(), p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
+                , p.getRut(), p.getValidadorRut() ,p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
         writer.execSQL(sql);
         writer.close();
         return null;
@@ -43,14 +43,15 @@ public class PacientesDAOSQLite implements PacientesDAO {
                     do {
                         Paciente p = new Paciente();
                         p.setRut(c.getInt(0));
-                        p.setNombre(c.getString(1));
-                        p.setApellido(c.getString(2));
-                        p.setFechaexamen(c.getInt(3));
-                        p.setArea(c.getString(4));
+                        p.setValidadorRut(c.getInt(1));
+                        p.setNombre(c.getString(2));
+                        p.setApellido(c.getString(3));
+                        p.setFechaexamen(c.getInt(4));
+                        p.setArea(c.getString(5));
                         p.setSintomas(c.equals(true));
-                        p.setTemperatura(c.getInt(5));
+                        p.setTemperatura(c.getInt(6));
                         p.setTos(c.equals(true));
-                        p.setPresion(c.getInt(6));
+                        p.setPresion(c.getInt(7));
 
                     } while(c.moveToNext());
                 }
