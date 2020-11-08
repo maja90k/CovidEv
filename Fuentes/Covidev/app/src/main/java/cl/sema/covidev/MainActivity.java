@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
                                 MainActivity.this
                                 , MainActivity.class
                         ));
-                        Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Bienvenido" , Toast.LENGTH_SHORT).show();
                     }
 
                 }catch (Exception ex){
-
+                    Toast.makeText(getApplicationContext(), "error al iniciar sesion" + errores, Toast.LENGTH_SHORT).show();
                 }
 
             }
