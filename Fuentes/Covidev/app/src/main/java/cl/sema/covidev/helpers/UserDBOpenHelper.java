@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 public class UserDBOpenHelper extends SQLiteOpenHelper {
 
+    //el helper ayuda a crear la base de datos interna
     public final String sqlCreate = "CREATE TABLE usuarios("+
             " nombre STRING,"+
             " validadorNom STRING,"+

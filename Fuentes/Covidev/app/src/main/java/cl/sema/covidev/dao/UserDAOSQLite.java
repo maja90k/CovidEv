@@ -24,7 +24,7 @@ public class UserDAOSQLite implements UserDAO {
         List<User> usuarios = new ArrayList<>();
         try{
             if (reader != null){
-                Cursor c = reader.rawQuery("SELECT nombre, valiaddorNom, password" + "FROM usuarios", null);
+                Cursor c = reader.rawQuery("SELECT nombre, valiadorNom, password" + "FROM usuarios", null);
                 if (c.moveToFirst()){
                     do {
                         User u = new User();
