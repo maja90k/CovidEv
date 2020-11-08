@@ -14,12 +14,10 @@ import java.util.ArrayList;
 
 public class PrincipalActivity extends AppCompatActivity {
 
-
-    private EditText rutE;
-    private EditText nombreE;
-    private EditText apellidoE;
-    private EditText fechaExamenE;
-    private Button registroButton;
+//    private EditText rutE;
+//    private EditText nombreE;
+//    private EditText apellidoE;
+//    private EditText fechaExamenE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,7 @@ public class PrincipalActivity extends AppCompatActivity {
         //Ver paciente en caso de apretar un Item del ListView.
 
         //Se redirecciona al RegistrarPacienteActivity.
-        registroButton = findViewById(R.id.registro_btn);
+        Button registroButton = findViewById(R.id.registro_btn);
         registroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

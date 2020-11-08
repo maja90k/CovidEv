@@ -31,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.nombre = (EditText) findViewById(R.id.usernombre);
-        this.validadornmb = (EditText) findViewById(R.id.validador);
+        this.validadornmb = (EditText) findViewById(R.id.verificador);
         this.passwd = (EditText) findViewById(R.id.psswd);
-
         this.loginbtn = (Button) findViewById(R.id.loginbutton);
 
         this.loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
+
                 try {
                     String nmb = nombre.getText().toString().trim();
                     String vrnb = validadornmb.getText().toString().trim();
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     if (pwd.isEmpty() || pwd.length() > 4 ){
                         errores.add("Debe ingresar su contraseña,los ultimos 4 digitos del nombre ingresado con la letra verificadora");
                     }
+
                     if (errores.isEmpty()){
                         User u = new User();
                         u.setNombre(nmb);
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         u.setPassword(pwd);
 
                         usDAO.save(u);
+<<<<<<< HEAD
 
                         startActivity(new Intent(
                                 MainActivity.this
@@ -74,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception ex){
                     Toast.makeText(getApplicationContext(), "error al iniciar sesion" + errores, Toast.LENGTH_SHORT).show();
+=======
+                    }
+
+                    startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
+                    finish();
+
+                } catch (Exception ex) {
+                    Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores , Toast.LENGTH_SHORT).show();
+                    System.out.println(ex.toString());
+>>>>>>> 95f5905ad2dd4af9582c2b4f12b8eb076c69f190
                 }
 
             }

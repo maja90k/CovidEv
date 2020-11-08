@@ -20,7 +20,7 @@ public class PacientesDAOLista implements PacientesDAO {
     }
 
     private PacientesDAOLista() {
-        Paciente pac = new Paciente();
+        Paciente p = new Paciente();
         //atributos.
     }
 
