@@ -11,7 +11,7 @@ import cl.sema.covidev.dto.Paciente;
 public class PacientesDBOpenHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate = "CREATE TABLE pacientes(" +
-            "rut INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+            "rut INTEGER PRIMARY KEY NOT NULL," +
             "validadorRut INT," +
             "nombre TEXT," +
             "apellido TEXT," +
