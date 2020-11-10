@@ -39,53 +39,39 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
+                //aqui deberia ir el metodo
+
 
                 try {
                     String nmb = nombre.getText().toString().trim();
                     String vrnb = validadornmb.getText().toString().trim();
                     String pwd = passwd.getText().toString().trim();
 
-                    if (nmb.length() < 7 || nmb.length() > 8 ){
+                    if (nmb.length() < 7 || nmb.length() > 8) {
                         errores.add("El nombre debe ser de un max de 8 caracteres y un minimo de 7 ");
                     }
-                    if(nmb.isEmpty()){
+                    if (nmb.isEmpty()) {
                         errores.add("Debe ingresar un nombre de usuario");
                     }
-                    if (vrnb.isEmpty() || vrnb.length() > 1){
+                    if (vrnb.isEmpty() || vrnb.length() > 1) {
                         errores.add("Debe ingresar una letra de su nombre");
                     }
-                    if (pwd.isEmpty() || pwd.length() > 4 ){
+                    if (pwd.isEmpty() || pwd.length() > 4) {
                         errores.add("Debe ingresar su contraseña,los ultimos 4 digitos del nombre ingresado con la letra verificadora");
                     }
 
-                    if (errores.isEmpty()){
+                    if (errores.isEmpty()) {
                         User u = new User();
                         u.setNombre(nmb);
                         u.setValidadorNom(vrnb);
                         u.setPassword(pwd);
-
                         usDAO.save(u);
-<<<<<<< HEAD
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(
-                                MainActivity.this
-                                , MainActivity.class
-                        ));
-                        Toast.makeText(getApplicationContext(), "Bienvenido" , Toast.LENGTH_SHORT).show();
                     }
-
-                }catch (Exception ex){
-                    Toast.makeText(getApplicationContext(), "error al iniciar sesion" + errores, Toast.LENGTH_SHORT).show();
-=======
-                    }
-
-                    startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
-                    finish();
-
                 } catch (Exception ex) {
-                    Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores , Toast.LENGTH_SHORT).show();
-                    System.out.println(ex.toString());
->>>>>>> 95f5905ad2dd4af9582c2b4f12b8eb076c69f190
+                    Toast.makeText(getApplicationContext(), "error al iniciar sesion" + errores, Toast.LENGTH_SHORT).show();
                 }
 
             }
