@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cl.sema.covidev.dto.User;
-import cl.sema.covidev.helpers.UserDBOpenHelper;
+import cl.sema.covidev.helpers.UsersSQLiteHelper;
 
 public class UserDAOSQLite implements UserDAO {
 
-    private UserDBOpenHelper db;
+    private UsersSQLiteHelper db;
 
     public UserDAOSQLite (Context contexto){
-        this.db = new UserDBOpenHelper(contexto, "DBUsuarios", null, 1);
+        this.db = new UsersSQLiteHelper(contexto, "DBUsuarios", null, 1);
     }
 
     @Override

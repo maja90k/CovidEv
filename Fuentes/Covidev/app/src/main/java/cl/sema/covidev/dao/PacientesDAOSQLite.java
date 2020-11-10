@@ -4,20 +4,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import cl.sema.covidev.dto.Paciente;
-import cl.sema.covidev.helpers.PacientesDBOpenHelper;
+import cl.sema.covidev.helpers.PacientesSQLiteHelper;
 
 public class PacientesDAOSQLite implements PacientesDAO {
 
-    private PacientesDBOpenHelper db;
+    private PacientesSQLiteHelper db;
 
     public PacientesDAOSQLite(Context contexto) {
-        this.db = new PacientesDBOpenHelper(contexto, "DBPacientes", null, 1);
+        this.db = new PacientesSQLiteHelper(contexto, "DBPacientes", null, 1);
     }
 
 

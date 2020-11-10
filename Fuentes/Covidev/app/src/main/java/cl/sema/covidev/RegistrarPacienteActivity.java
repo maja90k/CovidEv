@@ -5,7 +5,6 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -25,7 +24,6 @@ import java.util.List;
 import cl.sema.covidev.dao.PacientesDAO;
 import cl.sema.covidev.dao.PacientesDAOSQLite;
 import cl.sema.covidev.dto.Paciente;
-import cl.sema.covidev.helpers.PacientesDBOpenHelper;
 
 public class RegistrarPacienteActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 

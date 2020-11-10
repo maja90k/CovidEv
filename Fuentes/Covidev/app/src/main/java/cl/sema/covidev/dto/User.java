@@ -1,6 +1,7 @@
 package cl.sema.covidev.dto;
 
 public class User {
+    private int id;
     private String nombre;
     private String validadorNom;
     private String password;

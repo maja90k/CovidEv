@@ -6,15 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class UserDBOpenHelper extends SQLiteOpenHelper {
+public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     //el helper ayuda a crear la base de datos interna
     public final String sqlCreate = "CREATE TABLE usuarios("+
+            " id INTEGER,"+
             " nombre STRING,"+
             " validadorNom STRING,"+
             " password STRING)" ;
 
-    public UserDBOpenHelper(@Nullable Context contexto
+    public UsersSQLiteHelper(@Nullable Context contexto
             , @Nullable String name
             , @Nullable SQLiteDatabase.CursorFactory factory
             , int version) {
@@ -24,11 +25,8 @@ public class UserDBOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(this.sqlCreate);
-        sqLiteDatabase.execSQL("INSERT INTO usuarios(nombre,validadorNom,password)" +
-                " VALUES(1000" +
-                ",''" +
-                ",''" +
-                ",'')");
+        sqLiteDatabase.execSQL("INSERT INTO usuarios(id,nombre,validadorNom,password) " +
+                "VALUES('','','','')");
     }
 
 

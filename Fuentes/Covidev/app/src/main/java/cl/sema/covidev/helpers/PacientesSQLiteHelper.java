@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import cl.sema.covidev.dto.Paciente;
 
-public class PacientesDBOpenHelper extends SQLiteOpenHelper {
+public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate = "CREATE TABLE pacientes(" +
             "rut INTEGER PRIMARY KEY NOT NULL," +
@@ -22,7 +22,7 @@ public class PacientesDBOpenHelper extends SQLiteOpenHelper {
             "presion INTEGER," +
             "fechaexamen INTEGER)";
 
-    public PacientesDBOpenHelper(@Nullable Context context
+    public PacientesSQLiteHelper(@Nullable Context context
             , @Nullable String name
             , @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
