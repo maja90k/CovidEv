@@ -27,7 +27,7 @@ public class PrincipalActivity extends AppCompatActivity {
         this.setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //Mostrar ListView
+        //Mostrar ListView con el adapters
 
 
 

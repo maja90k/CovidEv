@@ -34,20 +34,17 @@ public class MainActivity extends AppCompatActivity {
         this.validadornmb = (EditText) findViewById(R.id.verificador);
         this.passwd = (EditText) findViewById(R.id.psswd);
         this.loginbtn = (Button) findViewById(R.id.loginbutton);
-
         this.loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onclickResum();
-
             }
         });
-
-
     }
 
     public void onclickResum() {
         List<String> errores = new ArrayList<>();
+
         try {
             String nmb = nombre.getText().toString().trim();
             String vrnb = validadornmb.getText().toString().trim();
@@ -67,13 +64,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (errores.isEmpty()) {
+
                 User u = new User();
                 u.setNombre(nmb);
                 u.setValidadorNom(vrnb);
                 u.setPassword(pwd);
                 usDAO.save(u);
-                startActivity(new Intent(MainActivity.this, MainActivity.class
-                ));
+
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
                 Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                 finish();

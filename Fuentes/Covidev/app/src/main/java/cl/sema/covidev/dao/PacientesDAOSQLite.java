@@ -20,16 +20,6 @@ public class PacientesDAOSQLite implements PacientesDAO {
         this.db = new PacientesDBOpenHelper(contexto, "DBPacientes", null, 1);
     }
 
-    @Override
-    public Paciente save(Paciente p) {
-        SQLiteDatabase writer = this.db.getWritableDatabase();
-        String sql = String.format("INSERT INTO pacientes(" + "rut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
-                        " VALUES(%d,'%s','%s','%s')"
-                , p.getRut(), p.getValidadorRut() ,p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
-        writer.execSQL(sql);
-        writer.close();
-        return null;
-    }
 
     @Override
     public List<Paciente> getAll() {
@@ -53,12 +43,23 @@ public class PacientesDAOSQLite implements PacientesDAO {
                         p.setTos(c.equals(true));
                         p.setPresion(c.getInt(7));
 
-                    } while(c.moveToNext());
+                    } while (c.moveToNext());
                 }
             }
         } catch (Exception ex) {
             pacientes = null;
         }
+        return null;
+    }
+
+    @Override
+    public Paciente save(Paciente p) {
+        SQLiteDatabase writer = this.db.getWritableDatabase();
+        String sql = String.format("INSERT INTO pacientes(" + "rut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
+                        " VALUES(%d,'%s','%s','%s')"
+                , p.getRut(), p.getValidadorRut(), p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
+        writer.execSQL(sql);
+        writer.close();
         return null;
     }
 }
