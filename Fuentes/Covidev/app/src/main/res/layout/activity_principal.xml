@@ -13,26 +13,18 @@
     <ListView
         android:id="@+id/pacientes_Lv"
         android:layout_width="match_parent"
-        android:layout_height="521dp"></ListView>
+        android:layout_height="566dp"></ListView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center">
-
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/registrobtn"
+
             android:layout_width="wrap_content"
             android:layout_height="72dp"
             android:layout_margin="10dp"
             android:background="@drawable/button_rounded"
             android:drawableLeft="@drawable/agregar"
             android:drawablePadding="10dp"
-            android:gravity="center"
             android:padding="16dp"
             android:text="Agregar Paciente"
-            android:textColor="@color/textwhite">
-        </Button>
-    </LinearLayout>
+            android:textColor="@color/textwhite"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 </LinearLayout>

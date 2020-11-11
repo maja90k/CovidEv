@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,13 +32,16 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        LayoutInflater inf = this.activity.getLayoutInflater();
-        View selector = inf.inflate(R.layout.pacientes_list,null,true);
-        TextView rut = selector.findViewById(R.id.rutTxt_Lv);
-        TextView nombre = selector.findViewById(R.id.nombreTxt_Lv);
-        TextView apellido  = selector.findViewById(R.id.apellidoTxt_Lv);
-        TextView fecha = selector.findViewById(R.id.fecha_Lv);
-        Paciente now = pacientes.get(position);
+        LayoutInflater inf      = this.activity.getLayoutInflater();
+        View selector           = inf.inflate(R.layout.pacientes_list,null,true);
+        TextView rut            = selector.findViewById(R.id.rutTxt_Lv);
+        TextView nombre         = selector.findViewById(R.id.nombreTxt_Lv);
+        TextView apellido       = selector.findViewById(R.id.apellidoTxt_Lv);
+        TextView fecha          = selector.findViewById(R.id.fecha_Lv);
+        ImageView secorono      = selector.findViewById(R.id.coronavirus);
+        ImageView taok          = selector.findViewById(R.id.taokmicompa);
+        Paciente now            = pacientes.get(position);
+
         rut.setText(now.getRut());
         //insertar la foto dependiendo si tiene o no coronao
         //habra que insertar 2, luego en el principalActivity

@@ -36,7 +36,7 @@ public class VerPacientesActivity extends AppCompatActivity {
         this.nombreTxt = findViewById(R.id.nombretxt);
         this.apellidoTxt  = findViewById(R.id.apellidotxt);
         this.fechaExamen  = findViewById(R.id.calendario);
-        //this.artra  =  findViewById(R.id.area);
+        this.artra  =  findViewById(R.id.area);
         this.sintomas  = findViewById(R.id.sintomas);
         this.temp  = findViewById(R.id.temperatura);
         this.tos  = findViewById(R.id.tos);

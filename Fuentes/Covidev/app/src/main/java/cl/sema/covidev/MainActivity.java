@@ -23,13 +23,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText validadornmb;
     private EditText passwd;
     private Button loginbtn;
-    private UserDAO usDAO = new UserDAOSQLite(this);
+    private UserDAO usDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.usDAO = new UserDAOSQLite(this);
         this.nombre = (EditText) findViewById(R.id.usernombre);
         this.validadornmb = (EditText) findViewById(R.id.verificador);
         this.passwd = (EditText) findViewById(R.id.psswd);
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 onclickResum();
             }
         });
+
     }
 
     public void onclickResum() {
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             if (nmb.isEmpty()) {
                 errores.add("Debe ingresar un nombre de usuario");
             }
-            if (vrnb.isEmpty() || vrnb.length() > 1) {
+            if (vrnb.length() != 1) {
                 errores.add("Debe ingresar una letra de su nombre");
             }
             if (pwd.isEmpty() || pwd.length() > 4) {
@@ -64,21 +66,19 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (errores.isEmpty()) {
-
                 User u = new User();
                 u.setNombre(nmb);
                 u.setValidadorNom(vrnb);
                 u.setPassword(pwd);
                 usDAO.save(u);
 
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-                Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                 finish();
+                Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception ex) {
             Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores, Toast.LENGTH_SHORT).show();
-            System.out.println(ex.toString());
+            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
         }
 
     }

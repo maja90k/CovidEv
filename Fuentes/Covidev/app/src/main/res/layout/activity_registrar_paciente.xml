@@ -15,9 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="114dp"
-        android:background="@drawable/covid"
-
-        >
+        android:background="@drawable/covid">
 
         <ImageView
             android:id="@+id/user"

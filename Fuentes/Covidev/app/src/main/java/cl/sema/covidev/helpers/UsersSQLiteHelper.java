@@ -10,7 +10,6 @@ public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     //el helper ayuda a crear la base de datos interna
     public final String sqlCreate = "CREATE TABLE IF NOT EXISTS usuarios("+
-
             " nombre STRING,"+
             " validadorNom STRING,"+
             " password STRING)" ;
@@ -24,15 +23,15 @@ public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(this.sqlCreate);
-        sqLiteDatabase.execSQL("INSERT INTO usuarios (nombre,validadorNom,password) " +
-                "VALUES(Null,?,?,?)");
+        sqLiteDatabase.execSQL( sqlCreate );
+        sqLiteDatabase.execSQL("INSERT INTO usuarios (nombre, validadorNom, password) " +
+                "VALUES(?, ?, ?)");
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS usuarios");
-        sqLiteDatabase.execSQL(sqlCreate);
+        sqLiteDatabase.execSQL( sqlCreate );
     }
 }
