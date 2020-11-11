@@ -6,11 +6,10 @@ import java.util.List;
 import cl.sema.covidev.dto.Paciente;
 
 public class PacientesDAOLista implements PacientesDAO {
+
     private List<Paciente> pacientes = new ArrayList<>();
 
-
     private static PacientesDAOLista instancia;
-
 
     public static PacientesDAOLista getInstance() {
         if (instancia == null) {
@@ -19,14 +18,9 @@ public class PacientesDAOLista implements PacientesDAO {
         return instancia;
     }
 
-    private PacientesDAOLista() {
-        Paciente p = new Paciente();
-        //atributos.
-    }
-
     @Override
-    public List<Paciente> getAll() {
-        return null;
+    public  List<Paciente> getAll() {
+        return pacientes;
     }
 
     @Override

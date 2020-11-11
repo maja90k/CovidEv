@@ -29,7 +29,7 @@ public class UserDAOSQLite implements UserDAO {
                 if (c.moveToFirst()){
                     do {
                         User u = new User();
-                        u.setId(c.getInt(0));
+
                         u.setNombre(c.getString(1));
                         u.setValidadorNom(c.getString(2));
                         u.setPassword(c.getString(3));
@@ -46,9 +46,9 @@ public class UserDAOSQLite implements UserDAO {
     @Override
     public User save(User u) {
         SQLiteDatabase writer = this.db.getWritableDatabase();
-        String sql = String.format("INSERT INTO usuarios(" + "id ,nombre, validadorNom, password)" +
-                        " VALUES(%d,'%s','%s','%s')"
-                , u.getId(), u.getNombre(), u.getValidadorNom() ,u.getPassword());
+        String sql = String.format("INSERT INTO usuarios(" + "nombre, validadorNom, password)" +
+                        " VALUES('%s','%s','%s')"
+                , u.getNombre(), u.getValidadorNom() ,u.getPassword());
         writer.execSQL(sql);
         writer.close();
         return null;

@@ -2,8 +2,6 @@ package cl.sema.covidev.dto;
 
 import java.io.Serializable;
 
-import cl.sema.covidev.PrincipalActivity;
-
 public class Paciente implements Serializable {
     private int rut;
     private int validadorRut;

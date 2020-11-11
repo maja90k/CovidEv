@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import cl.sema.covidev.dto.Paciente;
-
 public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate = "CREATE TABLE pacientes(" +
@@ -31,11 +29,8 @@ public class PacientesSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(this.sqlCreate);
-        sqLiteDatabase.execSQL( "INSERT INTO pacientes(rut,validadorRut,nombre,apellid,fechaexamen,area,sintomas,temperatura,tos,presion)" +
-                " VALUES(1000" +
-                ",''" +
-                ",''" +
-                ",'')");
+        sqLiteDatabase.execSQL( "INSERT INTO pacientes(rut,validadorRut,nombre,apellido,fechaexamen,area,sintomas,temperatura,tos,presion)" +
+                " VALUES(?,?,?,?,?,?,?,?,?,?)");
     }
 
     @Override

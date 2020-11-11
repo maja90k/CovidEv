@@ -4,14 +4,11 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private int id;
+
     private String nombre;
     private String validadorNom;
     private String password;
 
-    public void setId(int id) { this.id = id;}
-
-    public int getId() { return id; }
 
     public String getNombre() {
         return nombre;

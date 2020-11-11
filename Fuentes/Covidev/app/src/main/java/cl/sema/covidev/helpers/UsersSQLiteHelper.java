@@ -9,8 +9,8 @@ import androidx.annotation.Nullable;
 public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     //el helper ayuda a crear la base de datos interna
-    public final String sqlCreate = "CREATE TABLE usuarios("+
-            " id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
+    public final String sqlCreate = "CREATE TABLE IF NOT EXISTS usuarios("+
+
             " nombre STRING,"+
             " validadorNom STRING,"+
             " password STRING)" ;
@@ -25,8 +25,8 @@ public class UsersSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(this.sqlCreate);
-        sqLiteDatabase.execSQL("INSERT INTO usuarios(id,nombre,validadorNom,password) " +
-                "VALUES('','','','')");
+        sqLiteDatabase.execSQL("INSERT INTO usuarios (nombre,validadorNom,password) " +
+                "VALUES(Null,?,?,?)");
     }
 
 

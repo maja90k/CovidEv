@@ -16,15 +16,15 @@
     </ListView>
 
     <LinearLayout
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:gravity="center">
         <Button
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/agregar"
             android:padding="16dp"
-            android:id="@+id/registro_btn"
+            android:id="@+id/registrobtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
