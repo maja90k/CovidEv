@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1002204653/CovidEv-Fuentes-Covidev.iml" filepath="$PROJECT_DIR$/.idea/modules/-1002204653/CovidEv-Fuentes-Covidev.iml" group="Covidev" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-684210163/Covidev.iml" filepath="$PROJECT_DIR$/.idea/modules/-684210163/Covidev.iml" group="Covidev" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Covidev-app.iml" filepath="$PROJECT_DIR$/.idea/modules/Covidev-app.iml" group="Covidev/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1002204653/Fuentes-Covidev.iml" filepath="$PROJECT_DIR$/.idea/modules/-1002204653/Fuentes-Covidev.iml" group="Covidev" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fuentes-Covidev-app.iml" filepath="$PROJECT_DIR$/.idea/modules/Fuentes-Covidev-app.iml" group="Covidev/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Covidev/app" />
     </modules>
   </component>

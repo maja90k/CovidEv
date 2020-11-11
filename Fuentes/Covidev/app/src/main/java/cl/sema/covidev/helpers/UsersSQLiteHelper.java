@@ -10,7 +10,7 @@ public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     //el helper ayuda a crear la base de datos interna
     public final String sqlCreate = "CREATE TABLE usuarios("+
-            " id INTEGER,"+
+            " id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
             " nombre STRING,"+
             " validadorNom STRING,"+
             " password STRING)" ;
