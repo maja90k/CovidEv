@@ -3,6 +3,7 @@ package cl.sema.covidev;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -18,10 +19,6 @@ import cl.sema.covidev.dto.Paciente;
 
 public class PrincipalActivity extends AppCompatActivity {
 
-//    private EditText rutE;
-//    private EditText nombreE;
-//    private EditText apellidoE;
-//    private EditText fechaExamenE;
     private ListView paciLV;
     private List<Paciente> pacientes;
     private PacientesArrayAdapter adapter;
@@ -36,10 +33,7 @@ public class PrincipalActivity extends AppCompatActivity {
         this.setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowHomeEnabled(true);
-        this.regibtn = (Button) findViewById(R.id.registrobtn);
         //Mostrar ListView con el adapters
-
-
 
         //if(covid true/false) = excepciones distintas.Asi se cargan dos imagenes diferentes.
 
@@ -50,26 +44,28 @@ public class PrincipalActivity extends AppCompatActivity {
         this.regibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PrincipalActivity.this, RegistrarPacienteActivity.class));
+                startActivity(new Intent(PrincipalActivity.this
+                        , RegistrarPacienteActivity.class));
             }
         });
     }
 
-    //protected void onResume(){
-        //super.onResume();
-        //pacientes = paciDAO.getAll();
-        //adapter = new PacientesArrayAdapter(this, R.layout.pacientes_list, pacientes);
-        //paciLV = (ListView) findViewById(R.id.listview);
-        //paciLV.setAdapter(adapter);
-        //paciLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            //@Override
-            //public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               // Intent intent = new Intent
-                 //       (PrincipalActivity.this, VerPacientesActivity.class);
-                //Paciente pacienteActual = pacientes.get(i);
-                //intent.putExtra("paciente", pacienteActual);
-                //startActivity(intent);
-            //}
-        //});
-    //}
+    protected void onResume(){
+        super.onResume();
+        pacientes   = paciDAO.getAll();
+        //tira error porque el adaptador esta vacio
+        //adapter   = new PacientesArrayAdapter(this, R.layout.pacientes_list, pacientes);
+        paciLV      = (ListView) findViewById(R.id.pacientes_Lv);
+        paciLV.setAdapter(adapter);
+        paciLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               Intent intent = new Intent
+                        (PrincipalActivity.this, VerPacientesActivity.class);
+                Paciente pacienteActual = pacientes.get(i);
+                intent.putExtra("paciente", pacienteActual);
+                startActivity(intent);
+            }
+        });
+    }
 }

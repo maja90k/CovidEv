@@ -2,25 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="false"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".RegistrarPacienteActivity"
-    android:orientation="vertical">
+    tools:visibility="visible">
 
     <include layout="@layout/toolbar"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="206dp"
+        android:layout_height="114dp"
         android:background="@drawable/covid"
 
         >
 
         <ImageView
             android:id="@+id/user"
-            android:layout_width="184dp"
-            android:layout_height="135dp"
+            android:layout_width="114dp"
+            android:layout_height="82dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:src="@drawable/user">
@@ -28,8 +30,8 @@
         </ImageView>
 
         <TextView
-            android:layout_width="516dp"
-            android:layout_height="85dp"
+            android:layout_width="339dp"
+            android:layout_height="95dp"
             android:layout_gravity="center"
             android:layout_weight="2"
             android:gravity="center"
@@ -40,263 +42,205 @@
         </TextView>
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="902dp"
-        android:layout_marginTop="@dimen/marginTopBase"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/marginTopBase">
 
-            <EditText
-                android:id="@+id/verificador"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginTop="@dimen/marginTopBase"
-                android:layout_marginRight="15dp"
-                android:layout_weight="1"
-                android:hint="Ingrese Rut, si termina en k reemplaze por un 0"
-                android:inputType="number"
-                android:textSize="29sp"
-                android:backgroundTint="@color/colorPrimary"
-                ></EditText>
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="37dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal"
-                android:text="-"
-                android:textAllCaps="true"
-                android:textSize="20sp">
+                <EditText
+                    android:id="@+id/verificador"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
 
-            </TextView>
+                    android:layout_marginTop="@dimen/marginTopBase"
 
-            <EditText
-                android:id="@+id/validador"
-                android:layout_gravity="center_vertical"
-                android:layout_width="191dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="@dimen/marginTopBase"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:inputType="number"
-                android:textSize="29sp"
-                android:backgroundTint="@color/colorPrimary"
-                ></EditText>
-        </LinearLayout>
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
+                    android:hint="Ingrese Rut, k = 0"
+                    android:inputType="number"
+                    android:textSize="@dimen/Texthint"></EditText>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:gravity="center_horizontal"
+                    android:text="-"
 
-            <EditText
+                    android:textAllCaps="true"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/validador"
+                    android:layout_width="66dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_marginRight="@dimen/marginRight"
+
+                    android:backgroundTint="@color/primary"
+                    android:inputType="number"
+                    android:textSize="@dimen/Texthint"></EditText>
+
+
+            </LinearLayout>
+
+                <EditText
                 android:id="@+id/nombretxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/marginLeft"
                 android:layout_marginTop="@dimen/marginTopBase"
                 android:layout_marginRight="@dimen/marginRight"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
                 android:hint="Ingrese Nombre"
-                android:textSize="29sp"
                 android:inputType="text"
-                android:backgroundTint="@color/colorPrimary"></EditText>
-        </LinearLayout>
+                android:textSize="@dimen/Texthint"></EditText>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
+                <EditText
+                    android:id="@+id/apellidotxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
+                    android:hint="Ingrese Apellido"
+                    android:inputType="text"
+                    android:textSize="@dimen/Texthint"></EditText>
 
-            <EditText
-                android:id="@+id/apellidotxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginTop="@dimen/marginTopBase"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:hint="Ingrese Apellido"
-                android:textSize="29sp"
-                android:inputType="text"
-                android:layout_gravity="center_vertical"
-                android:backgroundTint="@color/colorPrimary"
-                ></EditText>
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/calendario"
+                    android:layout_width="354dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:backgroundTint="@color/primary"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="MM/DD/AAAA"
+                    android:inputType="date"
+                    android:textSize="@dimen/Texthint"></EditText>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
+                <Spinner
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:id="@+id/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:backgroundTint="@color/primary"
+                    android:layout_weight="1">
 
-            <EditText
-                android:id="@+id/calendario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:clickable="true"
-                android:focusable="false"
+                </Spinner>
+
+                <Switch
+                    android:id="@+id/sintomas"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
+                    android:text="¿Presenta sintomas del Covid?"
+                    android:textSize="@dimen/Texthint">
+
+                </Switch>
+
+                <EditText
+                    android:id="@+id/temperatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
+                    android:hint="Indique Temperatura ºC"
+                    android:inputType="number"
+                    android:textSize="@dimen/Texthint"></EditText>
+
+                <Switch
+                    android:id="@+id/tos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_weight="1"
+                    android:text="¿Presenta Tos?"
+                    android:textSize="@dimen/Texthint"
+
+                    >
+
+                </Switch>
+
+                <EditText
+                    android:id="@+id/presion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginLeft"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_marginRight="@dimen/marginRight"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primary"
+                    android:hint="Indique Presion Arterial"
+                    android:inputType="number"
+                    android:textSize="@dimen/Texthint"></EditText>
+
+                <Button
+                android:id="@+id/registrarBtn"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="323dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_rounded"
                 android:gravity="center"
-                android:hint="MM/DD/AAAA"
-                android:inputType="date"
-                android:layout_gravity="center_vertical"
-                android:textSize="29sp"
-                android:backgroundTint="@color/colorPrimary"></EditText>
-        </LinearLayout>
+                android:text="Registrar"
+                android:textColor="@color/textwhite"
+                android:textSize="@dimen/Texthint"
+                    android:layout_marginTop="@dimen/marginTopBase"
+                    android:layout_marginEnd="@dimen/marginTopBase"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Area de Trabajo"
-                android:textSize="31sp"
-                android:layout_gravity="center_vertical">
-
-            </TextView>
-
-            <Spinner
-                android:id="@+id/area"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1">
-
-            </Spinner>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
-
-            <Switch
-                android:id="@+id/sintomas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="¿Presenta sintomas del Covid?"
-                android:layout_weight="1"
-                android:textSize="31sp"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:backgroundTint="@color/colorPrimary">
-
-            </Switch>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/temperatura"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginTop="@dimen/marginTopBase"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:hint="Indique Temperatura ºC"
-                android:textSize="29sp"
-                android:inputType="number"
-                android:backgroundTint="@color/colorPrimary"></EditText>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
-
-            <Switch
-                android:id="@+id/tos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="¿Presenta Tos?"
-                android:layout_weight="1"
-                android:textSize="31sp"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginRight="@dimen/marginRight"
-                android:onClick="onClickSw2"
                 >
 
-            </Switch>
+                </Button>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marginTopBase"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/presion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/marginLeft"
-                android:layout_marginTop="@dimen/marginTopBase"
-                android:layout_marginRight="@dimen/marginRight"
-                android:layout_weight="1"
-                android:textSize="29sp"
-                android:hint="Indique Presion Arterial"
-                android:inputType="number"
-                android:backgroundTint="@color/colorPrimary"></EditText>
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopBtn"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/registrarBtn"
-            android:layout_width="323dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_rounded"
-            android:gravity="center"
-            android:text="Registrar"
-            android:textColor="@color/textwhite"
-            android:textSize="@dimen/Texthint"
-
-            >
-
-        </Button>
-    </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

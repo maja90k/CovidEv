@@ -1,8 +1,5 @@
 package cl.sema.covidev;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +11,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -95,7 +95,6 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
 
         this.regbtn = (Button) findViewById(R.id.registrarBtn);
-
         this.regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -32,6 +32,7 @@ public class VerPacientesActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.toolbar = findViewById(R.id.toolbar);
+        this.rut = findViewById(R.id.rut);
         this.nombreTxt = findViewById(R.id.nombretxt);
         this.apellidoTxt  = findViewById(R.id.apellidotxt);
         this.fechaExamen  = findViewById(R.id.calendario);
@@ -47,7 +48,7 @@ public class VerPacientesActivity extends AppCompatActivity {
 
         if (getIntent() != null){
             Paciente paciente = (Paciente)getIntent().getSerializableExtra("paciente");
-            this.rut.setText(paciente.getRut());
+            this.rut.setText(paciente.getRut() + "-" + paciente.getValidadorRut());
             this.nombreTxt.setText(paciente.getNombre());
             this.apellidoTxt.setText(paciente.getApellido());
             this.fechaExamen.setText(paciente.getFechaexamen());

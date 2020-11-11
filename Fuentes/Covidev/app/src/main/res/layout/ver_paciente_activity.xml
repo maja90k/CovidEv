@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".VerPacientesActivity">
+
+    <include layout="@layout/toolbar"></include>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/rut"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+    ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombretxt"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/apellidotxt"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendario"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/area"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sintomas"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/temperatura"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tos"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/presion"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/Textsize"
+        android:layout_marginTop="@dimen/marginTopBase"
+        ></TextView>
+
+</LinearLayout>

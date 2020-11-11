@@ -3,7 +3,7 @@
     <dimen name="marginTopBase">10dp</dimen>
     <dimen name="marginLeft">30dp</dimen>
     <dimen name="marginRight">30dp</dimen>
-    <dimen name="Textsize">50dp</dimen>
+    <dimen name="Textsize">30sp</dimen>
     <dimen name="Texthint">25dp</dimen>
     <dimen name="marginEnd">10dp</dimen>
     <dimen name="marginTopBtn">30dp</dimen>
