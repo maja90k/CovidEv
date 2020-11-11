@@ -33,15 +33,16 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
         LayoutInflater inf = this.activity.getLayoutInflater();
         View selector = inf.inflate(R.layout.pacientes_list,null,true);
-        //atributos
         TextView rut = selector.findViewById(R.id.rutTxt_Lv);
-        TextView nom = selector.findViewById(R.id.nombTxt_Lv);
-        TextView ape  = selector.findViewById(R.id.apeTxt_Lv);
-        TextView fecha = selector.findViewById(R.id.fec_Lv);
-
-        Paciente actl = pacientes.get(position);
-
-        rut.setText(actl.getRut());
+        TextView nombre = selector.findViewById(R.id.nombreTxt_Lv);
+        TextView apellido  = selector.findViewById(R.id.apellidoTxt_Lv);
+        TextView fecha = selector.findViewById(R.id.fecha_Lv);
+        Paciente now = pacientes.get(position);
+        rut.setText(now.getRut());
+        //insertar la foto dependiendo si tiene o no coronao
+        //habra que insertar 2, luego en el principalActivity
+        //se decidira si es true or false, para insertar una imagen
+        //que diga si tiene o no coronavirus, lo demas se conserva
 
         return selector;
     }

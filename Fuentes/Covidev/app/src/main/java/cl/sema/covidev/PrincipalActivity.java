@@ -33,13 +33,13 @@ public class PrincipalActivity extends AppCompatActivity {
         this.setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //Mostrar ListView con el adapters
+        //Mostrar ListView con pacientes
 
-        //if(covid true/false) = excepciones distintas.Asi se cargan dos imagenes diferentes.
+        //al seleccionar debera ser llevado a ver paciente activity
 
-        //Ver paciente en caso de apretar un Item del ListView.
 
-        //Se redirecciona al RegistrarPacienteActivity.
+
+        //Se redirecciona al RegistrarPacienteActivity con el button.
         this.regibtn = (Button) findViewById(R.id.registrobtn);
         this.regibtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onResume();
         pacientes   = paciDAO.getAll();
         //tira error porque el adaptador esta vacio
-        //adapter   = new PacientesArrayAdapter(this, R.layout.pacientes_list, pacientes);
+        adapter   = new PacientesArrayAdapter(this, R.layout.pacientes_list, pacientes);
         paciLV      = (ListView) findViewById(R.id.pacientes_Lv);
         paciLV.setAdapter(adapter);
         paciLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
