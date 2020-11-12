@@ -8,8 +8,8 @@ import androidx.annotation.Nullable;
 
 public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
-    private final String sqlCreate = "CREATE TABLE pacientes(" +
-            "rut INTEGER PRIMARY KEY NOT NULL," +
+    private final String sqlCreate = "CREATE TABLE " +
+            "pacientes(rut INTEGER PRIMARY KEY NOT NULL," +
             "validadorRut INT," +
             "nombre TEXT," +
             "apellido TEXT," +

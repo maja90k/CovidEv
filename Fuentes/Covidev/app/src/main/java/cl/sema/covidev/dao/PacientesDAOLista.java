@@ -5,7 +5,7 @@ import java.util.List;
 
 import cl.sema.covidev.dto.Paciente;
 
-public class PacientesDAOLista implements PacientesDAO {
+public class PacientesDAOLista implements PacientesDAO{
 
     private List<Paciente> pacientes = new ArrayList<>();
 

@@ -3,12 +3,16 @@ package cl.sema.covidev.dto;
 import java.io.Serializable;
 
 public class Paciente implements Serializable {
+
     private int rut;
     private int validadorRut;
     private String nombre;
     private String apellido;
     private int fechaexamen;
     private String area;
+
+
+
     private boolean sintomas;
     private int temperatura;
     private boolean tos;
@@ -86,14 +90,15 @@ public class Paciente implements Serializable {
         this.presion = presion;
     }
 
-
-
     public void setValidadorRut(int validadorRut) {
         this.validadorRut = validadorRut;
     }
 
     public int getValidadorRut() {
         return validadorRut;
+    }
+
+    public Paciente() {
     }
 
     @Override

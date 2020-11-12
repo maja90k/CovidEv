@@ -10,21 +10,23 @@
 
     <include layout="@layout/toolbar"></include>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/registrobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_rounded"
+        android:drawableLeft="@drawable/agregar"
+        android:drawablePadding="10dp"
+        android:padding="16dp"
+        android:text="Agregar Paciente"
+        android:textColor="@color/textwhite">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
     <ListView
         android:id="@+id/pacientes_Lv"
         android:layout_width="match_parent"
-        android:layout_height="566dp"></ListView>
+        android:layout_height="630dp"></ListView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/registrobtn"
-
-            android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/button_rounded"
-            android:drawableLeft="@drawable/agregar"
-            android:drawablePadding="10dp"
-            android:padding="16dp"
-            android:text="Agregar Paciente"
-            android:textColor="@color/textwhite"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 </LinearLayout>

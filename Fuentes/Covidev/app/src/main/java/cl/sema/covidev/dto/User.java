@@ -9,7 +9,6 @@ public class User implements Serializable {
     private String validadorNom;
     private String password;
 
-
     public String getNombre() {
         return nombre;
     }

@@ -17,6 +17,7 @@ import cl.sema.covidev.adapters.PacientesArrayAdapter;
 import cl.sema.covidev.dao.PacientesDAO;
 import cl.sema.covidev.dao.PacientesDAOSQLite;
 import cl.sema.covidev.dto.Paciente;
+import cl.sema.covidev.dao.PacientesDAOLista;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -51,8 +52,8 @@ public class PrincipalActivity extends AppCompatActivity {
         pacientes = paciDAO.getAll();
         //tira error porque el adaptador esta vacio
         adapter = new PacientesArrayAdapter(this, R.layout.pacientes_list, pacientes);
-        paciLV = (ListView) findViewById(R.id.pacientes_Lv);
-        paciLV.setAdapter(adapter);
+        paciLV = findViewById(R.id.pacientes_Lv);
+        //paciLV.setAdapter(adapter);
         paciLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
