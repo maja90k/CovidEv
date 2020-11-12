@@ -10,9 +10,6 @@ public class Paciente implements Serializable {
     private String apellido;
     private int fechaexamen;
     private String area;
-
-
-
     private boolean sintomas;
     private int temperatura;
     private boolean tos;

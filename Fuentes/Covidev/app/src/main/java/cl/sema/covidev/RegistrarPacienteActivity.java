@@ -2,6 +2,7 @@ package cl.sema.covidev;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import cl.sema.covidev.helpers.PacientesSQLiteHelper;
 import cl.sema.covidev.dao.PacientesDAO;
 import cl.sema.covidev.dao.PacientesDAOSQLite;
 import cl.sema.covidev.dto.Paciente;
@@ -44,12 +46,13 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_paciente);
-        this.veri = (EditText) findViewById(R.id.verificador);
-        this.vali = (EditText) findViewById(R.id.validador);
-        this.nombre = (EditText) findViewById(R.id.nombretxt);
-        this.apellido = (EditText) findViewById(R.id.apellidotxt);
 
-        this.fecha = (EditText) findViewById(R.id.calendario);
+        this.veri =         (EditText) findViewById(R.id.verificador);
+        this.vali =         (EditText) findViewById(R.id.validador);
+        this.nombre =        (EditText) findViewById(R.id.nombretxt);
+        this.apellido =     (EditText) findViewById(R.id.apellidotxt);
+        this.fecha =        (EditText) findViewById(R.id.calendario);
+
         this.fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,11 +62,13 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
         });
 
-        this.artra = (Spinner) findViewById(R.id.area);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_item);
-        artra.setAdapter(adapter);
 
-        this.sin = (Switch) findViewById(R.id.sintomas);
+        //
+        this.artra =    (Spinner) findViewById(R.id.area);
+        ArrayAdapter<CharSequence> opciones = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_item);
+        artra.setAdapter(opciones);
+        ///
+        this.sin =      (Switch) findViewById(R.id.sintomas);
         sin.setChecked(false);
         this.sin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,8 +82,9 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 }
             }
         });
-        this.temp = (EditText) findViewById(R.id.temperatura);
-        this.tos = (Switch) findViewById(R.id.tos);
+
+        this.temp =     (EditText) findViewById(R.id.temperatura);
+        this.tos =      (Switch) findViewById(R.id.tos);
         tos.setChecked(false);
         this.tos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,26 +98,25 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 }
             }
         });
-        this.pres = (EditText) findViewById(R.id.presion);
 
-
-        this.regbtn = (Button) findViewById(R.id.registrarBtn);
+        this.pres =     (EditText) findViewById(R.id.presion);
+        this.regbtn =   (Button) findViewById(R.id.registrarBtn);
         this.regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
                 try {
-                    //PacientesDBOpenHelper pct = new PacientesDBOpenHelper(this, "administracion", null, 1) ;
-                    //SQLiteDatabase bd = new pct.getWritableDatabase();
+                   PacientesSQLiteHelper pct = new PacientesSQLiteHelper(this, "administracion", null, 1) ;
+                   SQLiteDatabase bd = new pct.getWritableDatabase();
 
-                    int vrn = Integer.parseInt(veri.getText().toString().trim());
-                    int vdr = Integer.parseInt(vali.getText().toString().trim());
-                    String nomb = nombre.getText().toString().trim();
-                    String ape = apellido.getText().toString().trim();
-                    int fha = Integer.parseInt(fecha.getText().toString().trim());
-                    String art = artra.getSelectedItem().toString();
-                    int tma = Integer.parseInt(temp.getText().toString().trim());
-                    int psna = Integer.parseInt(pres.getText().toString().trim());
+                    int vrn =       Integer.parseInt(veri.getText().toString().trim());
+                    int vdr =       Integer.parseInt(vali.getText().toString().trim());
+                    String nomb =   nombre.getText().toString().trim();
+                    String ape =    apellido.getText().toString().trim();
+                    int fha =       Integer.parseInt(fecha.getText().toString().trim());
+                    String art =    artra.getSelectedItem().toString();
+                    int tma =       Integer.parseInt(temp.getText().toString().trim());
+                    int psna =      Integer.parseInt(pres.getText().toString().trim());
 
                     if (vrn <= 1111111 || vrn >= 99999999) {
                         errores.add("El rut ingresado no es valido");
@@ -134,12 +139,13 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                     if (tma <= 20.0) {
                         errores.add("La temperatura debe ser mayor a 20.0°C");
                     }
-
                     if (psna < 90 || psna > 200) {
                         errores.add("Debe indicar su Presion arterial valida o por precaucion debe ir al centro medico cercano");
                     }
 
+
                     if (errores.isEmpty()) {
+
                         Paciente p = new Paciente();
                         p.setRut(vrn);
                         p.setValidadorRut(vdr);
@@ -147,18 +153,16 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                         p.setApellido(ape);
                         p.setFechaexamen(fha);
                         p.setArea(art);
-
                         p.setTemperatura(tma);
-
                         p.setPresion(psna);
                         paciDAO.save(p);
+
                         //3. Redirigir al MainActivity
-                        startActivity(new Intent(RegistrarPacienteActivity.this
-                                , MainActivity.class));
+                        startActivity(new Intent(RegistrarPacienteActivity.this, MainActivity.class));
                         Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception ex) {
-                    Toast.makeText(getApplicationContext(), "error al ingresar al paciente" + errores, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Error al ingresar paciente." + errores, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -173,7 +177,6 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
         c.set(Calendar.MONTH, month);
         c.set(Calendar.YEAR, year);
         String currentDateString = DateFormat.getDateInstance(SimpleDateFormat.SHORT).format(c.getTime());
-
         EditText editText = (EditText) findViewById(R.id.calendario);
         editText.setText(currentDateString);
 

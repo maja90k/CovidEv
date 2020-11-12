@@ -56,8 +56,8 @@ public class PacientesDAOSQLite implements PacientesDAO {
     @Override
     public Paciente save(Paciente p) {
         SQLiteDatabase writer = this.db.getWritableDatabase();
-        String sql = String.format("INSERT INTO pacientes(" + "rut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
-                        " VALUES(%d,'%s','%s','%s')"
+        String sql = String.format("INSERT INTO pacientes(" + "rut,validadorRut,nombre,apellido,fechaexamen, area,sintomas ,temperatura, tos, presion)" +
+                        " VALUES(%d,%d,'%s','%s','%s', %d ,'%s','%s',%d,'%s')"
                 , p.getRut(), p.getValidadorRut(), p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
         writer.execSQL(sql);
         writer.close();

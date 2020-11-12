@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 u.setValidadorNom(vrnb);
                 u.setPassword(pwd);
                 usDAO.save(u);
-
                 startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                 finish();
                 Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
