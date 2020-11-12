@@ -105,10 +105,10 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             @Override
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
-                try {
-                   PacientesSQLiteHelper pct = new PacientesSQLiteHelper(this, "administracion", null, 1) ;
-                   SQLiteDatabase bd = new pct.getWritableDatabase();
 
+                try {
+                   PacientesSQLiteHelper pct = new  PacientesSQLiteHelper(null,"administracion", null, 1) ;
+                   SQLiteDatabase bd =  pct.getWritableDatabase();
                     int vrn =       Integer.parseInt(veri.getText().toString().trim());
                     int vdr =       Integer.parseInt(vali.getText().toString().trim());
                     String nomb =   nombre.getText().toString().trim();

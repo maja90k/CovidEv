@@ -20,9 +20,7 @@ public class PacientesSQLiteHelper extends SQLiteOpenHelper {
             "presion INTEGER," +
             "fechaexamen INTEGER)";
 
-    public PacientesSQLiteHelper(@Nullable Context context
-            , @Nullable String name
-            , @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public PacientesSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

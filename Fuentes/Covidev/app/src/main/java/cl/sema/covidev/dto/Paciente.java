@@ -96,6 +96,7 @@ public class Paciente implements Serializable {
     }
 
     public Paciente() {
+
     }
 
     @Override
