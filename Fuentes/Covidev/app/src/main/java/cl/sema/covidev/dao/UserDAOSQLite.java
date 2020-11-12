@@ -35,7 +35,7 @@ public class UserDAOSQLite implements UserDAO {
                         u.setPassword(c.getString(3));
                     } while (c.moveToNext());
                 }
-
+                reader.close();
             }
         }catch (Exception ex){
             usuarios = null;
@@ -51,6 +51,6 @@ public class UserDAOSQLite implements UserDAO {
                 , u.getNombre(), u.getValidadorNom() ,u.getPassword());
         writer.execSQL(sql);
         writer.close();
-        return null;
+        return u;
     }
 }

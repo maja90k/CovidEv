@@ -44,6 +44,7 @@ public class PacientesDAOSQLite implements PacientesDAO {
 
                     } while (c.moveToNext());
                 }
+                reader.close();
             }
         } catch (Exception ex) {
             Log.e("PACIENTESDAO", ex.toString());
@@ -60,6 +61,6 @@ public class PacientesDAOSQLite implements PacientesDAO {
                 , p.getRut(), p.getValidadorRut(), p.getNombre(), p.getApellido(), p.getFechaexamen(), p.getArea(), p.getTemperatura(), p.getPresion());
         writer.execSQL(sql);
         writer.close();
-        return null;
+        return p;
     }
 }
