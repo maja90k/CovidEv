@@ -61,6 +61,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
         this.artra = (Spinner) findViewById(R.id.area);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_item);
+        artra.setAdapter(adapter);
 
         this.sin = (Switch) findViewById(R.id.sintomas);
         sin.setChecked(false);
