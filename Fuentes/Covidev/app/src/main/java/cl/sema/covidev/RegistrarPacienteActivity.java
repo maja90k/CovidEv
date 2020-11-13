@@ -106,68 +106,68 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             public void onClick(View view) {
                 List<String> errores = new ArrayList<>();
 
-                try {
-                   PacientesSQLiteHelper pct = new  PacientesSQLiteHelper(null,"administracion", null, 1) ;
-                   SQLiteDatabase bd =  pct.getWritableDatabase();
-                    int vrn =       Integer.parseInt(veri.getText().toString().trim());
-                    int vdr =       Integer.parseInt(vali.getText().toString().trim());
-                    String nomb =   nombre.getText().toString().trim();
-                    String ape =    apellido.getText().toString().trim();
-                    int fha =       Integer.parseInt(fecha.getText().toString().trim());
-                    String art =    artra.getSelectedItem().toString();
-                    int tma =       Integer.parseInt(temp.getText().toString().trim());
-                    int psna =      Integer.parseInt(pres.getText().toString().trim());
 
-                    if (vrn <= 1111111 || vrn >= 99999999) {
-                        errores.add("El rut ingresado no es valido");
-                    }
-                    if (vdr < 0 || vdr > 9) {
-                        errores.add("El numero verificador ingresado no es valido");
-                    }
-                    if (nomb.isEmpty()) {
-                        errores.add("Debe ingresar un nombre valido");
-                    }
-                    if (ape.isEmpty()) {
-                        errores.add("Debe ingresar un apellido valido");
-                    }
-                    if (fha >= 0) {
-                        errores.add("Debe indicar la fecha del examen");
-                    }
-                    if (art.isEmpty()) {
-                        errores.add("Debe indicar su area de trabajo");
-                    }
-                    if (tma <= 20.0) {
-                        errores.add("La temperatura debe ser mayor a 20.0°C");
-                    }
-                    if (psna < 90 || psna > 200) {
-                        errores.add("Debe indicar su Presion arterial valida o por precaucion debe ir al centro medico cercano");
-                    }
+                //PacientesSQLiteHelper pct = new PacientesSQLiteHelper(null, "administracion", null, 1);
+                //SQLiteDatabase bd = pct.getWritableDatabase();
+                int vrn = Integer.parseInt(veri.getText().toString());
+                int vdr = Integer.parseInt(vali.getText().toString());
+                String nomb = nombre.getText().toString().trim();
+                String ape = apellido.getText().toString().trim();
+                int fha = Integer.parseInt(fecha.getText().toString());
+                String art = artra.getSelectedItem().toString();
+                int tma = Integer.parseInt(temp.getText().toString());
+                int psna = Integer.parseInt(pres.getText().toString());
+
+                if (vrn <= 1111111 || vrn >= 99999999) {
+                    errores.add("El rut ingresado no es valido");
+                }
+                if (vdr < 0 || vdr > 9) {
+                    errores.add("El numero verificador ingresado no es valido");
+                }
+                if (nomb.isEmpty()) {
+                    errores.add("Debe ingresar un nombre valido");
+                }
+                if (ape.isEmpty()) {
+                    errores.add("Debe ingresar un apellido valido");
+                }
+                if (fha >= 0) {
+                    errores.add("Debe indicar la fecha del examen");
+                }
+                if (art.isEmpty()) {
+                    errores.add("Debe indicar su area de trabajo");
+                }
+                if (tma <= 20.0) {
+                    errores.add("La temperatura debe ser mayor a 20.0°C");
+                }
+                if (psna < 90 || psna > 200) {
+                    errores.add("Debe indicar su Presion arterial valida o por precaucion debe ir al centro medico cercano");
+                }
 
 
-                    if (errores.isEmpty()) {
+                if (errores.isEmpty()) {
 
-                        Paciente p = new Paciente();
-                        p.setRut(vrn);
-                        p.setValidadorRut(vdr);
-                        p.setNombre(nomb);
-                        p.setApellido(ape);
-                        p.setFechaexamen(fha);
-                        p.setArea(art);
-                        p.setTemperatura(tma);
-                        p.setPresion(psna);
-                        paciDAO.save(p);
+                    Paciente p = new Paciente();
+                    p.setRut(vrn);
+                    p.setValidadorRut(vdr);
+                    p.setNombre(nomb);
+                    p.setApellido(ape);
+                    p.setFechaexamen(fha);
+                    p.setArea(art);
+                    p.setTemperatura(tma);
+                    p.setPresion(psna);
+                    paciDAO.save(p);
 
-                        //3. Redirigir al MainActivity
-                        startActivity(new Intent(RegistrarPacienteActivity.this, MainActivity.class));
-                        Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception ex) {
+                    //3. Redirigir al MainActivity
+                    startActivity(new Intent(RegistrarPacienteActivity.this, MainActivity.class));
+                    Toast.makeText(getApplicationContext(), "Paciente registrado con exito", Toast.LENGTH_SHORT).show();
+                } else {
                     Toast.makeText(getApplicationContext(), "Error al ingresar paciente." + errores, Toast.LENGTH_SHORT).show();
                 }
             }
-        });
 
-    }
+            });
+
+        }
 
 
     @Override

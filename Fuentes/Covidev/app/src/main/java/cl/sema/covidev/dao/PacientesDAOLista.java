@@ -47,6 +47,7 @@ public class PacientesDAOLista implements PacientesDAO{
 
     @Override
     public  List<Paciente> getAll() {
+
         return pacientes;
     }
 

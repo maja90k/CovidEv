@@ -9,8 +9,8 @@ import androidx.annotation.Nullable;
 public class UsersSQLiteHelper extends SQLiteOpenHelper {
 
     //el helper ayuda a crear la base de datos interna
-    public final String sqlCreate = "CREATE TABLE IF NOT EXISTS usuarios("+
-            " nombre STRING,"+
+    public final String sqlCreate = "CREATE TABLE " +
+            "usuarios(nombre STRING,"+
             " validadorNom STRING,"+
             " password STRING)" ;
 

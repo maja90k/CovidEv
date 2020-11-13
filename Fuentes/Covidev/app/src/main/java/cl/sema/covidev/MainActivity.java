@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cl.sema.covidev.dao.UserDAO;
+import cl.sema.covidev.dao.UserDAOLista;
 import cl.sema.covidev.dao.UserDAOSQLite;
 import cl.sema.covidev.dto.User;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText validadornmb;
     private EditText passwd;
     private Button loginbtn;
-    private UserDAO usDAO;
+    private UserDAO usDAO = new UserDAOSQLite(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,47 +39,42 @@ public class MainActivity extends AppCompatActivity {
         this.loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onclickResum();
+                List<String> errores = new ArrayList<>();
+
+                String nmb = nombre.getText().toString().trim();
+                String vrnb = validadornmb.getText().toString().trim();
+                String pwd = passwd.getText().toString().trim();
+
+                if (nmb.length() < 7 || nmb.length() > 8) {
+                    errores.add("-- El nombre debe ser de un max de 8 caracteres y un minimo de 7 ");
+                }
+                if (nmb.isEmpty()) {
+                    errores.add("-- Debe ingresar un nombre de usuario ");
+                }
+                if (vrnb.length() != 1) {
+                    errores.add(" Debe ingresar una letra de su nombre ");
+                }
+                if (pwd.isEmpty() || pwd.length() > 4) {
+                    errores.add(" Debe ingresar su contraseña,los ultimos 4 digitos del nombre ingresado con la letra verificadora ");
+                }
+
+                if (errores.isEmpty()) {
+                    User u = new User();
+                    u.setNombre(nmb);
+                    u.setValidadorNom(vrnb);
+                    u.setPassword(pwd);
+                    usDAO.save(u);
+                    startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
+                    finish();
+                    Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Error al inciar sesion" + " "
+                            + errores, Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
     }
 
-    public void onclickResum() {
-        List<String> errores = new ArrayList<>();
-
-        try {
-            String nmb = nombre.getText().toString().trim();
-            String vrnb = validadornmb.getText().toString().trim();
-            String pwd = passwd.getText().toString().trim();
-
-            if (nmb.length() < 7 || nmb.length() > 8) {
-                errores.add("El nombre debe ser de un max de 8 caracteres y un minimo de 7 ");
-            }
-            if (nmb.isEmpty()) {
-                errores.add("Debe ingresar un nombre de usuario");
-            }
-            if (vrnb.length() != 1) {
-                errores.add("Debe ingresar una letra de su nombre");
-            }
-            if (pwd.isEmpty() || pwd.length() > 4) {
-                errores.add("Debe ingresar su contraseña,los ultimos 4 digitos del nombre ingresado con la letra verificadora");
-            }
-
-            if (errores.isEmpty()) {
-                User u = new User();
-                u.setNombre(nmb);
-                u.setValidadorNom(vrnb);
-                u.setPassword(pwd);
-                usDAO.save(u);
-                startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
-                finish();
-                Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
-            }
-        } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(), "Error al inciar sesion" + errores, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
-        }
-
-    }
 }

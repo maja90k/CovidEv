@@ -15,12 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:layout_margin="10dp"
-        android:background="@drawable/button_rounded"
-        android:drawableLeft="@drawable/agregar"
+        android:src="@drawable/agregar"
+        android:background="@color/primary_light"
         android:drawablePadding="10dp"
         android:padding="16dp"
-        android:text="Agregar Paciente"
-        android:textColor="@color/textwhite">
+        android:layout_gravity="center_horizontal"
+
+        >
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

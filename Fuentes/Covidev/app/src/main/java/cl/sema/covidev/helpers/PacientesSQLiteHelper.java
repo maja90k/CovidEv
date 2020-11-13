@@ -10,7 +10,7 @@ public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate = "CREATE TABLE " +
             "pacientes(rut INTEGER PRIMARY KEY NOT NULL," +
-            "validadorRut INT," +
+            "validadorRut INTEGER," +
             "nombre TEXT," +
             "apellido TEXT," +
             "area TEXT," +

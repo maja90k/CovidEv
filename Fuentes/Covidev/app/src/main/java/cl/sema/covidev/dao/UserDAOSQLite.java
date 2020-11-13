@@ -15,7 +15,7 @@ public class UserDAOSQLite implements UserDAO {
     private UsersSQLiteHelper db;
 
     public UserDAOSQLite (Context contexto){
-        this.db = new UsersSQLiteHelper(contexto, "DBUsuarios", null, 1);
+        this.db = new UsersSQLiteHelper(contexto, "DBUsuarios", null, 3);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserDAOSQLite implements UserDAO {
         }catch (Exception ex){
             usuarios = null;
         }
-        return null;
+        return usuarios;
     }
 
     @Override
