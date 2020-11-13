@@ -50,11 +50,11 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        this.veri =         (EditText) findViewById(R.id.verificador);
-        this.vali =         (EditText) findViewById(R.id.validador);
-        this.nombre =        (EditText) findViewById(R.id.nombretxt);
-        this.apellido =     (EditText) findViewById(R.id.apellidotxt);
-        this.fecha =        (EditText) findViewById(R.id.calendario);
+        this.veri =          findViewById(R.id.verificador);
+        this.vali =          findViewById(R.id.validador);
+        this.nombre =        findViewById(R.id.nombretxt);
+        this.apellido =      findViewById(R.id.apellidotxt);
+        this.fecha =         findViewById(R.id.calendario);
 
         this.fecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +67,11 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
 
         //
-        this.artra =    (Spinner) findViewById(R.id.area);
+        this.artra =     findViewById(R.id.area);
         ArrayAdapter<CharSequence> opciones = ArrayAdapter.createFromResource(this, R.array.area, android.R.layout.simple_spinner_item);
         artra.setAdapter(opciones);
         ///
-        this.sin =      (Switch) findViewById(R.id.sintomas);
+        this.sin =       findViewById(R.id.sintomas);
         sin.setChecked(false);
         this.sin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +86,8 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             }
         });
 
-        this.temp =     (EditText) findViewById(R.id.temperatura);
-        this.tos =      (Switch) findViewById(R.id.tos);
+        this.temp =      findViewById(R.id.temperatura);
+        this.tos =       findViewById(R.id.tos);
         tos.setChecked(false);
         this.tos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,8 +102,8 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
             }
         });
 
-        this.pres =     (EditText) findViewById(R.id.presion);
-        this.regbtn =   (Button) findViewById(R.id.registrarBtn);
+        this.pres =     findViewById(R.id.presion);
+        this.regbtn =   findViewById(R.id.registrarBtn);
         this.regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,25 +112,23 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
                 //PacientesSQLiteHelper pct = new PacientesSQLiteHelper(null, "administracion", null, 1);
                 //SQLiteDatabase bd = pct.getWritableDatabase();
-                int vrn = Integer.parseInt(veri.getText().toString());
-                int vdr = Integer.parseInt(vali.getText().toString());
+                int vrn = veri.getText().length();
+                int vdr = vali.getText().length();
                 String nomb = nombre.getText().toString().trim();
                 String ape = apellido.getText().toString().trim();
-                int fha = Integer.parseInt(fecha.getText().toString());
+                int fha = fecha.getText().length();
                 String art = artra.getSelectedItem().toString();
-                int tma = Integer.parseInt(temp.getText().toString());
-                int psna = Integer.parseInt(pres.getText().toString());
+                int tma = temp.getText().length();
+                int psna = pres.getText().length();
 
 
                 if (vrn <= 1111111 || vrn >= 99999999) {
                     errores.add("El rut ingresado no es valido");
                 }
-                if (vdr < 0) {
+                if (vdr < 0 || vdr > 9) {
                     errores.add("El numero verificador ingresado no es valido");
                 }
-                if (vdr > 9){
-                    errores.add("El numero verificador ingresado no es valido");
-                }
+
                 if (nomb.isEmpty()) {
                     errores.add("Debe ingresar un nombre valido");
                 }
