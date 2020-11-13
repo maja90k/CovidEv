@@ -76,17 +76,21 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
         this.sin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean sintomas;
                 if (view.getId() == R.id.sintomas) {
                     if (sin.isChecked()) {
                         //aqui debe guardar el estado en la variable
+                       
                     } else {
                         //aqui debe dar el error al guardar el estado en la variable
+
                     }
                 }
             }
         });
 
         this.temp =      findViewById(R.id.temperatura);
+        ///
         this.tos =       findViewById(R.id.tos);
         tos.setChecked(false);
         this.tos.setOnClickListener(new View.OnClickListener() {
@@ -95,14 +99,17 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 if (view.getId() == R.id.tos) {
                     if (tos.isChecked()) {
                         //aqui debe guardar el estado en la variable
+
                     } else {
                         //aqui debe dar el error al guardar el estado en la variable
+
                     }
                 }
             }
         });
-
+        ///
         this.pres =     findViewById(R.id.presion);
+        ///
         this.regbtn =   findViewById(R.id.registrarBtn);
         this.regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,7 +183,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
 
 
     @Override
-    public void onDateSet(DatePicker view, int dayOfMonth, int month, int year) {
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Calendar c = Calendar.getInstance();
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         c.set(Calendar.MONTH, month);
