@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
 import java.text.DateFormat;
@@ -45,6 +46,9 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_paciente);
+        this.setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         this.veri =         (EditText) findViewById(R.id.verificador);
         this.vali =         (EditText) findViewById(R.id.validador);
@@ -117,10 +121,14 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 int tma = Integer.parseInt(temp.getText().toString());
                 int psna = Integer.parseInt(pres.getText().toString());
 
+
                 if (vrn <= 1111111 || vrn >= 99999999) {
                     errores.add("El rut ingresado no es valido");
                 }
-                if (vdr < 0 || vdr > 9) {
+                if (vdr < 0) {
+                    errores.add("El numero verificador ingresado no es valido");
+                }
+                if (vdr > 9){
                     errores.add("El numero verificador ingresado no es valido");
                 }
                 if (nomb.isEmpty()) {
@@ -129,7 +137,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity implements Date
                 if (ape.isEmpty()) {
                     errores.add("Debe ingresar un apellido valido");
                 }
-                if (fha >= 0) {
+                if (fha >= 0 ){
                     errores.add("Debe indicar la fecha del examen");
                 }
                 if (art.isEmpty()) {
