@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".VerPacientesActivity">
+    tools:context="cl.inacap.covidEv.VerPacientesActivity">
 
     <include layout="@layout/toolbar"></include>
 

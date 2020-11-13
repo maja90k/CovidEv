@@ -1,4 +1,4 @@
-package cl.sema.covidev.helpers;
+package cl.inacap.covidEv.helpers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

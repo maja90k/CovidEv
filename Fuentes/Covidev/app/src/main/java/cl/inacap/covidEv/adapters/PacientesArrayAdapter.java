@@ -1,7 +1,6 @@
-package cl.sema.covidev.adapters;
+package cl.inacap.covidEv.adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import cl.sema.covidev.R;
-import cl.sema.covidev.dto.Paciente;
+import cl.inacap.covidEv.dto.Paciente;
 
 
 public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {

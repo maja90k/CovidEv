@@ -1,4 +1,4 @@
-package cl.sema.covidev;
+package cl.inacap.covidEv;
 
 import org.junit.Test;
 

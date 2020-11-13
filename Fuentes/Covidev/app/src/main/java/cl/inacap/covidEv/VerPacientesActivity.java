@@ -1,4 +1,4 @@
-package cl.sema.covidev;
+package cl.inacap.covidEv;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -7,7 +7,8 @@ import android.widget.Toolbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import cl.sema.covidev.dto.Paciente;
+import cl.inacap.covidEv.dto.Paciente;
+import cl.sema.covidev.R;
 
 public class VerPacientesActivity extends AppCompatActivity {
 

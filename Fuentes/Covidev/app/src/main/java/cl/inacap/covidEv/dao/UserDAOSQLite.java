@@ -1,4 +1,4 @@
-package cl.sema.covidev.dao;
+package cl.inacap.covidEv.dao;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import cl.sema.covidev.dto.User;
-import cl.sema.covidev.helpers.UsersSQLiteHelper;
+import cl.inacap.covidEv.dto.User;
+import cl.inacap.covidEv.helpers.UsersSQLiteHelper;
 
 public class UserDAOSQLite implements UserDAO {
 

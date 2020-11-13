@@ -1,7 +1,7 @@
-package cl.sema.covidev.dao;
+package cl.inacap.covidEv.dao;
 
 import java.util.List;
-import cl.sema.covidev.dto.User;
+import cl.inacap.covidEv.dto.User;
 
 public interface UserDAO {
 

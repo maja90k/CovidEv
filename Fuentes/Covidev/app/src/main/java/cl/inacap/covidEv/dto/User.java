@@ -1,4 +1,4 @@
-package cl.sema.covidev.dto;
+package cl.inacap.covidEv.dto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package cl.sema.covidev;
+package cl.inacap.covidEv;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import cl.sema.covidev.dao.UserDAO;
-import cl.sema.covidev.dao.UserDAOLista;
-import cl.sema.covidev.dao.UserDAOSQLite;
-import cl.sema.covidev.dto.User;
+import cl.inacap.covidEv.dao.UserDAO;
+import cl.inacap.covidEv.dao.UserDAOSQLite;
+import cl.inacap.covidEv.dto.User;
+import cl.sema.covidev.R;
 
 public class MainActivity extends AppCompatActivity {
 

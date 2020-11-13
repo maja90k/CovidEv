@@ -7,7 +7,7 @@
     android:fillViewport="false"
     android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".RegistrarPacienteActivity"
+    tools:context="cl.inacap.covidEv.RegistrarPacienteActivity"
     tools:visibility="visible">
 
     <include layout="@layout/toolbar"></include>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/BackgroundBase"
     android:orientation="vertical"
-    tools:context=".PrincipalActivity">
+    tools:context="cl.inacap.covidEv.PrincipalActivity">
 
     <include layout="@layout/toolbar"></include>
 

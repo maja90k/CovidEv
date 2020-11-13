@@ -1,4 +1,4 @@
-package cl.sema.covidev;
+package cl.inacap.covidEv;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +13,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-import cl.sema.covidev.adapters.PacientesArrayAdapter;
-import cl.sema.covidev.dao.PacientesDAO;
-import cl.sema.covidev.dao.PacientesDAOSQLite;
-import cl.sema.covidev.dto.Paciente;
-import cl.sema.covidev.dao.PacientesDAOLista;
+import cl.inacap.covidEv.adapters.PacientesArrayAdapter;
+import cl.inacap.covidEv.dao.PacientesDAO;
+import cl.inacap.covidEv.dao.PacientesDAOSQLite;
+import cl.inacap.covidEv.dto.Paciente;
+import cl.sema.covidev.R;
 
 public class PrincipalActivity extends AppCompatActivity {
 

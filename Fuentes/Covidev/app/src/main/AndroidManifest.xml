@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".RegistrarPacienteActivity" />
-        <activity android:name=".PrincipalActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="cl.inacap.covidEv.RegistrarPacienteActivity" />
+        <activity android:name="cl.inacap.covidEv.PrincipalActivity" />
+        <activity android:name="cl.inacap.covidEv.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

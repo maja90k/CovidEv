@@ -1,4 +1,4 @@
-package cl.sema.covidev.dao;
+package cl.inacap.covidEv.dao;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,8 +8,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import cl.sema.covidev.dto.Paciente;
-import cl.sema.covidev.helpers.PacientesSQLiteHelper;
+import cl.inacap.covidEv.dto.Paciente;
+import cl.inacap.covidEv.helpers.PacientesSQLiteHelper;
 
 public class PacientesDAOSQLite implements PacientesDAO {
 
